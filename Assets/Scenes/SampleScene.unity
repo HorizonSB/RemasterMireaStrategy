@@ -293,7 +293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 9.35, z: -0.69}
+  m_LocalPosition: {x: 13.98, y: 14.16, z: 7.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -328,9 +328,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffbebaf7e303f145ae91db4a55eeb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hexTilePrefab: {fileID: 7405211964530138923, guid: c2392530795a8ee48ba055889f382b08, type: 3}
+  hexTilePrefab:
+  - {fileID: 7405211964530138923, guid: 2ac6d7e4613d1b746ad9712b54bb4527, type: 3}
+  - {fileID: 7405211964530138923, guid: 6a13430c9455e2c49a8bd71ff992f145, type: 3}
   mapWidth: 15
-  mapHeight: 10
+  mapHeight: 12
+  cellResourcesAmmount: 2
+  resourcesCells:
+  - {fileID: 7405211964530138923, guid: c2392530795a8ee48ba055889f382b08, type: 3}
+  - {fileID: 7405211964530138923, guid: 3c436ea02d80be14eacd81bb6c247446, type: 3}
 --- !u!4 &1897507882
 Transform:
   m_ObjectHideFlags: 0
