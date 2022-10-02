@@ -292,13 +292,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 13.98, y: 14.16, z: 7.97}
+  m_LocalRotation: {x: 0.48936018, y: -0, z: -0, w: 0.87208176}
+  m_LocalPosition: {x: 12.26, y: 14.16, z: -2.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 58.597, y: 0, z: 0}
 --- !u!1 &1897507880
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,10 +333,14 @@ MonoBehaviour:
   - {fileID: 7405211964530138923, guid: 6a13430c9455e2c49a8bd71ff992f145, type: 3}
   mapWidth: 15
   mapHeight: 12
+  radiusOfNonEnemyBuildings: 3
   cellResourcesAmmount: 2
   resourcesCells:
   - {fileID: 7405211964530138923, guid: c2392530795a8ee48ba055889f382b08, type: 3}
   - {fileID: 7405211964530138923, guid: 3c436ea02d80be14eacd81bb6c247446, type: 3}
+  enemyCellsAmmount: 1
+  enemyCells:
+  - {fileID: 7405211964530138923, guid: be9f9da92b3d93d48b814b2116c46a95, type: 3}
 --- !u!4 &1897507882
 Transform:
   m_ObjectHideFlags: 0

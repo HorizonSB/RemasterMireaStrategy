@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9062479934213406462}
   - component: {fileID: 8243993902167038671}
   m_Layer: 0
-  m_Name: hexagon 1
+  m_Name: grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
