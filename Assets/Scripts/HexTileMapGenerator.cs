@@ -20,8 +20,8 @@ public class HexTileMapGenerator : MonoBehaviour
     public int enemyCellsAmmount;
     [SerializeField] private GameObject[] enemyCells;
 
-    float tileXOffset = 1.736f;
-    float tileZOffset = 1.506f;
+    float tileXOffset = 1.732f;
+    float tileZOffset = 1.500f;
 
     void Start()
     {
