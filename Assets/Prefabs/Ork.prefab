@@ -113,7 +113,7 @@ MonoBehaviour:
   _health: 3
   _damage: 10
   _targetTag: building
-  _detectionRadius: 1
+  _detectionRadius: 2
 --- !u!195 &5913164913525564726
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -31,8 +31,10 @@ public class Ork : ParentCharacter
                 shortetsDistance = distanceToTarget;
                 nearestTarget = target;
             }
+            if (distanceToTarget < _detectionRadius) _agent.SetDestination(nearestTarget.transform.position);
         }
-       if(_targetTag == null) _agent.SetDestination(_portal.position);
+
+        if(_targetTag == null) _agent.SetDestination(_portal.position);
     }
 
     private void OnDrawGizmosSelected()
