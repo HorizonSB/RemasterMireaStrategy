@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6883059900754985323}
   - component: {fileID: 5324875758323380892}
   - component: {fileID: 5473733273594292292}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Tree.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 5285673506670856060}
   - component: {fileID: 772948800248799425}
   - component: {fileID: 6248076049959606921}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Tree.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 6304087346336527906}
   - component: {fileID: 4481831867541216690}
   - component: {fileID: 7371003279381618909}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 6088700129367972290}
   - component: {fileID: 6980263652778849733}
   - component: {fileID: 711695122567544390}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Tree.001 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 1852363103972263876}
   - component: {fileID: 7799265246414413304}
   - component: {fileID: 7443873102918723759}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Tree.003 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 5916513984348399650}
   - component: {fileID: 4579938428164311339}
   - component: {fileID: 1153264131401542404}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Tree.002 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,9 +498,9 @@ GameObject:
   - component: {fileID: 6494351422303619636}
   - component: {fileID: 9062479934213406462}
   - component: {fileID: 8243993902167038671}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: forest
-  m_TagString: Untagged
+  m_TagString: Forest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 2073867895070700211}
   - component: {fileID: 3488903412363001831}
   - component: {fileID: 1291080100737344047}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Tree.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,6 +741,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e66666224dc6b3047b3f7523d4c0e5ba, type: 3}
       propertyPath: m_Name
       value: NewHexagon2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e66666224dc6b3047b3f7523d4c0e5ba, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e66666224dc6b3047b3f7523d4c0e5ba, type: 3}
       propertyPath: m_StaticEditorFlags

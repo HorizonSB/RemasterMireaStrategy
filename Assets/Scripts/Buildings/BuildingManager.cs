@@ -17,7 +17,7 @@ public class BuildingManager : MonoBehaviour, IPointerClickHandler
     void Update()
     {
         if (shopPanel.gameObject.activeInHierarchy) return;
-        if (activeCell) gameObject.SetActive(false);
+        if (!shopPanel.transform.GetChild(0).gameObject.activeInHierarchy) activeCell = false;
     }
 
     public void setBuild(GameObject build)

@@ -31,6 +31,7 @@ public class HexTileMapGenerator : MonoBehaviour
         CheckForNormalGeneration();
 
     }
+
     void CheckForNormalGeneration()
     {
         GameObject portal = GameObject.FindGameObjectWithTag("Portal");

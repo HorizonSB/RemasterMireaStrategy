@@ -24,7 +24,6 @@ public class EnemyBuilding : MonoBehaviour
         {
             yield return new WaitForSeconds(timeSpawnCurve.Evaluate(_gameDuration));
             Instantiate(_enemies[Random.Range(0, _enemies.Length - 1)], transform.position, Quaternion.identity);
-            Debug.Log(timeSpawnCurve.Evaluate(_gameDuration));
         }
     }
 }

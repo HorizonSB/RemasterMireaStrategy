@@ -10,6 +10,8 @@ TagManager:
   - building
   - ShopPanel
   - TileMap
+  - Forest
+  - Rock
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Buildings
   - 
   - 
   - 

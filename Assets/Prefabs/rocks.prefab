@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7795253269856748484}
   - component: {fileID: 387443503501551700}
   - component: {fileID: 6708608537564026171}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809160916389894552}
   m_LocalRotation: {x: -0.39505792, y: 0.14060684, z: -0.30440485, w: 0.8552758}
-  m_LocalPosition: {x: 0.00033233318, y: -0.0016584527, z: 0.0012200252}
+  m_LocalPosition: {x: 0.00033233318, y: -0.00166, z: 0.00321}
   m_LocalScale: {x: 0.26796168, y: 0.2679312, z: 0.26799223}
   m_Children: []
   m_Father: {fileID: 5600225479325268602}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 3911624916697505947}
   - component: {fileID: 905182895061712097}
   - component: {fileID: 7296145467443965742}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Rock (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3023716504391465060}
   m_LocalRotation: {x: -0.25439364, y: 0.09054234, z: -0.3228542, w: 0.9071115}
-  m_LocalPosition: {x: 0.0021195544, y: 0.00053520256, z: 0.00020000004}
+  m_LocalPosition: {x: 0.0021195544, y: 0.00053, z: 0.00219}
   m_LocalScale: {x: 0.26796162, y: 0.2679341, z: 0.26798916}
   m_Children: []
   m_Father: {fileID: 5600225479325268602}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 466679165350377826}
   - component: {fileID: 2540071228683712549}
   - component: {fileID: 5764740604293978498}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Rock (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4702342278856417884}
   m_LocalRotation: {x: 0.21878771, y: -0.07786966, z: -0.32614258, w: 0.9163511}
-  m_LocalPosition: {x: -0.0016756656, y: -0.0033129554, z: -0.0008900006}
+  m_LocalPosition: {x: -0.0016756656, y: -0.00332, z: 0.0011}
   m_LocalScale: {x: 0.26796168, y: 0.2679865, z: 0.26793674}
   m_Children: []
   m_Father: {fileID: 5600225479325268602}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 6186904665472081211}
   - component: {fileID: 4360478013135240789}
   - component: {fileID: 6399706304066244253}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Rock (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6828536159005166942}
   m_LocalRotation: {x: -0.60722834, y: 0.21612094, z: -0.25636682, w: 0.7203067}
-  m_LocalPosition: {x: 0.002030018, y: -0.0034045025, z: -0.00041999973}
+  m_LocalPosition: {x: 0.002030018, y: -0.00341, z: 0.00157}
   m_LocalScale: {x: 0.26796168, y: 0.26795116, z: 0.26797205}
   m_Children: []
   m_Father: {fileID: 5600225479325268602}
@@ -336,9 +336,9 @@ GameObject:
   - component: {fileID: 6494351422303619636}
   - component: {fileID: 9062479934213406462}
   - component: {fileID: 8243993902167038671}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: rocks
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 7454057660077624242}
   - component: {fileID: 2602691975998687582}
   - component: {fileID: 8584570315373918517}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Rock (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,7 +447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7508377103539020172}
   m_LocalRotation: {x: 0.21878771, y: -0.07786966, z: -0.32614258, w: 0.9163511}
-  m_LocalPosition: {x: -0.002272858, y: 0.00038622558, z: -0.00089000707}
+  m_LocalPosition: {x: -0.002272858, y: 0.00038, z: 0.0011}
   m_LocalScale: {x: 0.26796168, y: 0.2679865, z: 0.26793674}
   m_Children: []
   m_Father: {fileID: 5600225479325268602}
@@ -572,6 +572,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e66666224dc6b3047b3f7523d4c0e5ba, type: 3}
       propertyPath: m_Name
       value: NewHexagon2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e66666224dc6b3047b3f7523d4c0e5ba, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e66666224dc6b3047b3f7523d4c0e5ba, type: 3}
       propertyPath: m_StaticEditorFlags
