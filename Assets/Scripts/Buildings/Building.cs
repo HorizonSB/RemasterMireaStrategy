@@ -7,9 +7,13 @@ public class Building : MonoBehaviour
 {
     [Header("Attributes")]
     public int _health;
+    
+    [Header("Props")]
+    [SerializeField]private GameObject explosion;
 
     [Header("UI")]
     public Slider healthSlider;
+
 
     void Start()
     {
@@ -24,6 +28,7 @@ public class Building : MonoBehaviour
         healthSlider.value = _health;
         if (_health <= 0)
         {
+            Instantiate(explosion, gameObject.transform);
             Destroy(gameObject);
         }
     }

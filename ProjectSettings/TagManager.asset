@@ -12,6 +12,8 @@ TagManager:
   - TileMap
   - Forest
   - Rock
+  - Gold
+  - GameOverPanel
   layers:
   - Default
   - TransparentFX

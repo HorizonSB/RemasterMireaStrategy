@@ -54,22 +54,6 @@ public class Ork : MonoBehaviour
             {
                 _target = null;
             }
-
-            //if(_target != null)
-            //{
-            //    float distanceToCurrentTarget = Vector3.Distance(transform.position, _target.transform.position);
-            //    if (distanceToCurrentTarget <= attackRange && _target != null)
-            //    {
-            //        animator.SetBool("IsAttacking", true);
-            //        if (IsAttacking == false) StartCoroutine("GiveDamage");
-            //    }
-            //    else
-            //    {
-            //        IsAttacking = false;
-            //        animator.SetBool("IsAttacking", false);
-            //        StopCoroutine("GiveDamage");
-            //    }
-            //}
         }
         if (_target == null && !IsDead) _agent.SetDestination(_portal.position);
     }

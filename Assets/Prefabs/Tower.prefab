@@ -97,12 +97,12 @@ NavMeshObstacle:
   m_GameObject: {fileID: 497409993577008675}
   m_Enabled: 1
   serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 0.835, z: 0.5}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.42, z: 0}
   m_TimeToStationary: 0.5
 --- !u!114 &1282697458099454000
 MonoBehaviour:
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 200
+  explosion: {fileID: 2851310892258147557, guid: b33f2ced0a6293c49b95a377cc7f87a5, type: 3}
   healthSlider: {fileID: 3409921988588915284}
 --- !u!136 &6378431675187147091
 CapsuleCollider:
@@ -585,7 +586,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8fb1599f988ba8b4d9e8a94096113af5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2dcdaa17896d26a42ab4f3d9f12c01b1, type: 2}
+      objectReference: {fileID: 2100000, guid: 8ed6afdfe352cc9489608d332ee01613, type: 2}
     - target: {fileID: 919132149155446097, guid: 8fb1599f988ba8b4d9e8a94096113af5, type: 3}
       propertyPath: m_Name
       value: TowerRemaster

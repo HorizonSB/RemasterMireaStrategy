@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class HexTileMapGenerator : MonoBehaviour
 {
+    [Header("Map attributes")]
     [SerializeField] private GameObject[] hexTilePrefab;
     List<GameObject> cells = new List<GameObject>();
     [SerializeField] int mapWidth = 25;
     [SerializeField] int mapHeight = 12;
+
     [Tooltip("Radius in which no enemy buildings are spawned")]
     [SerializeField] float radiusOfNonEnemyBuildings;
+
+    [Header("Level Settings")]
+    [SerializeField] int levelNumber;
 
     [Header("Resources cells")]
     public int cellResourcesAmmount;
@@ -25,7 +30,8 @@ public class HexTileMapGenerator : MonoBehaviour
 
     void Start()
     {
-        
+        Time.timeScale = 1;
+        EventsBus.LevelPassedSuccesfully?.AddListener(LevelUpgrade);
         CreateListOfCells();
         CreateHexTileMap();
         CheckForNormalGeneration();
@@ -106,6 +112,14 @@ public class HexTileMapGenerator : MonoBehaviour
                     TempGO.transform.position = new Vector3(x * tileXOffset + tileXOffset / 2, 0, z * tileZOffset);
                 }
             }
+        }
+    }
+
+    public void LevelUpgrade()
+    {
+        if(levelNumber % 3 == 0)
+        {
+            enemyCellsAmmount += 1;
         }
     }
 }
