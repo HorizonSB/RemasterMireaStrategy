@@ -12,7 +12,7 @@ public class EnemyWaves : MonoBehaviour
 
     [Header("End Game Settings")]
     public int portalHP = 20;
-    public GameObject endGamePanel;
+    private GameObject endGamePanel;
     [SerializeField] private Text hpText;
     [SerializeField] private float gameTimer = 300f;
     [SerializeField] private Text timerText;

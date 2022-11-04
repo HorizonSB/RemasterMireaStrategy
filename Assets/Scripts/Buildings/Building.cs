@@ -28,7 +28,7 @@ public class Building : MonoBehaviour
         healthSlider.value = _health;
         if (_health <= 0)
         {
-            Instantiate(explosion, gameObject.transform);
+            Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
