@@ -14,6 +14,8 @@ TagManager:
   - Rock
   - Gold
   - GameOverPanel
+  - LoseGamePanel
+  - WinGamePanel
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour
 
     public void OpenScene(int _sceneIndex)
     {
-
+        Time.timeScale = 1;
         StartCoroutine(LoaddLevel(_sceneIndex));
     }
 

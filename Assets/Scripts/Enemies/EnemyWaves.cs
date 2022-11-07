@@ -12,17 +12,23 @@ public class EnemyWaves : MonoBehaviour
 
     [Header("End Game Settings")]
     public int portalHP = 20;
-    private GameObject endGamePanel;
+    private GameObject LoseGamePanel;
+    private GameObject WinGamePanel;
     [SerializeField] private Text hpText;
     [SerializeField] private float gameTimer = 300f;
     [SerializeField] private Text timerText;
+    [SerializeField] private GameObject explosion;
+    
+    private float _timeLeft = 0f;
+    private bool IsGameEnd = false;
 
     void Start()
     {
         _timeLeft = gameTimer;
         StartCoroutine(StartTimer());
 
-        endGamePanel = GameObject.FindGameObjectWithTag("GameOverPanel");
+        LoseGamePanel = GameObject.FindGameObjectWithTag("LoseGamePanel");
+        WinGamePanel = GameObject.FindGameObjectWithTag("WinGamePanel");
         enemyBuildings = GameObject.FindGameObjectsWithTag("EnemyBuilding");
         Invoke("BuildEnemySpawn", 10f);
     }
@@ -46,8 +52,9 @@ public class EnemyWaves : MonoBehaviour
         gameTimer -= Time.deltaTime;
         timerText.text = gameTimer.ToString();
 
-        if(gameTimer <= 0 && portalHP > 0)
+        if(gameTimer <= 0 && portalHP > 0 && IsGameEnd == false)
         {
+            IsGameEnd = true;
             LevelPassedSuccesfully();
         }
     }
@@ -55,13 +62,17 @@ public class EnemyWaves : MonoBehaviour
     public void LevelFailed()
     {
         EventsBus.LevelFailed?.Invoke();
-        endGamePanel.transform.GetChild(0).gameObject.SetActive(true);
+        LoseGamePanel.transform.GetChild(0).gameObject.SetActive(true);
+        Instantiate(explosion, transform.position, Quaternion.identity);
         Time.timeScale = 0;
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     public void LevelPassedSuccesfully()
     {
-        EventsBus.LevelPassedSuccesfully?.Invoke();
+        WinGamePanel.transform.GetChild(0).gameObject.SetActive(true);
+        EventsBus.LevelPassedSuccesfully.Invoke();
+        Time.timeScale = 0;
     }
 
     private void BuildEnemySpawn()
@@ -77,8 +88,6 @@ public class EnemyWaves : MonoBehaviour
             yield return new WaitForSeconds(spawnFrequency);
         }
     }
-
-    public float _timeLeft = 0f;
 
     private IEnumerator StartTimer()
     {

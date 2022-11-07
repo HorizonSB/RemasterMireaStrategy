@@ -30,8 +30,9 @@ public class HexTileMapGenerator : MonoBehaviour
 
     void Start()
     {
+        GetParametrs();
         Time.timeScale = 1;
-        EventsBus.LevelPassedSuccesfully?.AddListener(LevelUpgrade);
+        EventsBus.LevelPassedSuccesfully.AddListener(LevelUpgrade);
         CreateListOfCells();
         CreateHexTileMap();
         CheckForNormalGeneration();
@@ -117,9 +118,30 @@ public class HexTileMapGenerator : MonoBehaviour
 
     public void LevelUpgrade()
     {
-        if(levelNumber % 3 == 0)
+        levelNumber += 1;
+        if(levelNumber % 3 == 0) enemyCellsAmmount += 1;
+        if(levelNumber % 5 == 0)
         {
-            enemyCellsAmmount += 1;
+            mapHeight += 1;
+            mapWidth += 1;
         }
+        SetParametrs();
+    }
+
+    public void SetParametrs()
+    {
+        Debug.Log("Parametrs set");
+        PlayerPrefs.SetInt("Level", levelNumber);
+        PlayerPrefs.SetInt("Enemy cells ammount", enemyCellsAmmount);
+        PlayerPrefs.SetInt("Map Width", mapWidth);
+        PlayerPrefs.SetInt("Map Height", mapHeight);
+    }
+
+    public void GetParametrs()
+    {
+        if(PlayerPrefs.HasKey("Level")) levelNumber = PlayerPrefs.GetInt("Level");
+        if (PlayerPrefs.HasKey("Enemy cells ammount")) enemyCellsAmmount = PlayerPrefs.GetInt("Enemy cells ammount");
+        if (PlayerPrefs.HasKey("Map Width")) mapWidth = PlayerPrefs.GetInt("Map Width");
+        if (PlayerPrefs.HasKey("Map Height")) mapHeight = PlayerPrefs.GetInt("Map Height");
     }
 }

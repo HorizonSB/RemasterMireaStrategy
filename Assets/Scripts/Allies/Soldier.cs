@@ -1,9 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.AI;
 
-public class Ork : MonoBehaviour
+public class Soldier : MonoBehaviour
 {
+    public UnityEvent death = new UnityEvent();
+
     [Header("Attributes")]
     public int _health;
     public int _damage;
@@ -17,21 +20,18 @@ public class Ork : MonoBehaviour
     [Header("Setup Fields")]
     [SerializeField] private string _targetTag;
     [SerializeField] private GameObject _target;
-    private Transform _portal;
+    [SerializeField] private Transform[] wanderPoints;
     private NavMeshAgent _agent;
     private Animator animator;
     private bool IsDead = false;
     private bool IsAttacking = false;
+    private bool IsWandering = false;
 
     private void Start()
     {
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
         _agent = GetComponent<NavMeshAgent>();
-        _portal = GameObject.FindGameObjectWithTag("Portal").transform;
-        _agent.SetDestination(_portal.position);
-        EventsBus.LevelFailed.AddListener(GameOver);
-        EventsBus.LevelPassedSuccesfully.AddListener(GameOver);
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     void UpdateTarget()
@@ -57,12 +57,34 @@ public class Ork : MonoBehaviour
                 _target = null;
             }
         }
-        if (_target == null && !IsDead) _agent.SetDestination(_portal.position);
+        if (_target == null && !IsDead && !IsWandering)
+        {
+            StartWandering(wanderPoints);
+        }
+        else
+        {
+            StopCoroutine("Wander");
+            IsWandering = false;
+        }
     }
 
-    void GameOver()
+    public void StartWandering(Transform[] _wanderPoints)
     {
-        _agent.isStopped = true;
+        wanderPoints = _wanderPoints;
+        StartCoroutine(Wander(wanderPoints));
+    }
+
+    IEnumerator Wander(Transform[] wanderPoints)
+    {
+        IsWandering = true;
+        while (IsWandering)
+        {
+            for(int i = 0; i < wanderPoints.Length; i++)
+            {
+                _agent.SetDestination(wanderPoints[i].transform.position);
+                yield return new WaitForSeconds(1f);
+            }
+        }
     }
 
 
@@ -100,23 +122,22 @@ public class Ork : MonoBehaviour
     IEnumerator GiveDamage()
     {
         IsAttacking = true;
-        while(_target != null)
+        while (_target != null)
         {
             yield return new WaitForSeconds(waitTillHit);
-            if (_target.GetComponent<Building>()) _target.GetComponent<Building>().TakeDamage(_damage);
-            else if (_target.GetComponent<Soldier>()) _target.GetComponent<Soldier>().TakeDamage(_damage);
+            if (_target.GetComponent<Ork>()) _target.GetComponent<Ork>().TakeDamage(_damage);
             yield return new WaitForSeconds(waitAfterHit);
         }
     }
 
     IEnumerator DeathAnimation()
     {
+        death?.Invoke();
         yield return new WaitForSeconds(3f);
-        Destroy(gameObject); 
-    
+        Destroy(gameObject);
     }
 
-private void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, _detectionRadius);

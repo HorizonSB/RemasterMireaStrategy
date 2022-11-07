@@ -5,6 +5,6 @@ using UnityEngine.Events;
 
 public static class EventsBus
 {
-    public static UnityEvent LevelFailed;
-    public static UnityEvent LevelPassedSuccesfully;
+    public static UnityEvent LevelFailed = new UnityEvent();
+    public static UnityEvent LevelPassedSuccesfully = new UnityEvent();
 }

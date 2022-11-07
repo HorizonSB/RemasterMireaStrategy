@@ -8,12 +8,16 @@ public class CameraController : MonoBehaviour
     public float _radius = 10;
     public Transform _target;
     public bool IsCameraMoving = false;
+    private Animator animator;
+    private Transform portal;
 
     private Touch _touch;
     private Vector3 _targetPos;
 
     private void Start()
     {
+        Invoke("CameraSpawn", 0.1f);
+        animator = GetComponent<Animator>();
         if (_target == null)
         {
             _target = this.transform;
@@ -43,5 +47,11 @@ public class CameraController : MonoBehaviour
             }
         }
         else IsCameraMoving = false;
+    }
+
+    public void CameraSpawn()
+    {
+        portal = GameObject.FindGameObjectWithTag("Portal").transform;
+        transform.position = new Vector3(portal.transform.position.x, portal.transform.position.y + 5.37f, portal.transform.position.z - 4);
     }
 }
