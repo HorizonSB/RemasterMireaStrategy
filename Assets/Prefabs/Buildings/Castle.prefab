@@ -135,12 +135,12 @@ MonoBehaviour:
   timeTillNextSpawn: 5
   spawnPoint: {fileID: 8267568798743566320}
   wanderPoints:
-  - {fileID: 5799207727485124739}
   - {fileID: 3949575376739754908}
   - {fileID: 931302807304642080}
   - {fileID: 7570740016474266161}
   - {fileID: 1839616746688698302}
   - {fileID: 6631878145498241174}
+  - {fileID: 5799207727485124739}
   soldierPrefab: {fileID: 4500893082176962236, guid: caeefe16f24ddd649998b25fd754da96, type: 3}
   aliveSoldiers: 0
 --- !u!1 &1953620253316560720

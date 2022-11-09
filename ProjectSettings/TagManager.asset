@@ -16,6 +16,7 @@ TagManager:
   - GameOverPanel
   - LoseGamePanel
   - WinGamePanel
+  - NotEnoughResources
   layers:
   - Default
   - TransparentFX

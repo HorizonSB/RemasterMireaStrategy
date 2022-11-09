@@ -121,6 +121,7 @@ public class Soldier : MonoBehaviour
 
     IEnumerator GiveDamage()
     {
+        gameObject.transform.LookAt(_target.transform);
         IsAttacking = true;
         while (_target != null)
         {

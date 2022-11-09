@@ -12,6 +12,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private Text _woodText;
     [SerializeField] private Text _rockText;
     [SerializeField] private Text _goldText;
+    [SerializeField] private GameObject notEnoughResourcesPanel;
 
     private GameObject tileMap;
     private Transform shopPanel;
@@ -31,23 +32,27 @@ public class Shop : MonoBehaviour
 
     public void TryBuy(GameObject buildingPrefab, int woodCost, int rockCost, int goldCost)
     {
-        if(woodCost <= _wood && rockCost <= _rock && goldCost <= _gold)
+        if (woodCost <= _wood && rockCost <= _rock && goldCost <= _gold)
         {
             _wood -= woodCost;
             _rock -= rockCost;
             _gold -= goldCost;
 
-            for(int i =0; i < tileMap.gameObject.transform.childCount; i++)
+            for (int i = 0; i < tileMap.gameObject.transform.childCount; i++)
             {
-                if(tileMap.transform.GetChild(i).GetComponent<BuildingManager>())
+                if (tileMap.transform.GetChild(i).GetComponent<BuildingManager>())
                 {
                     if ((tileMap.transform.GetChild(i).GetComponent<BuildingManager>().activeCell == true && tileMap.transform.GetChild(i).GetComponent<BuildingManager>().building == false))
                     {
                         tileMap.transform.GetChild(i).GetComponent<BuildingManager>().setBuild(buildingPrefab);
                     }
                 }
-
             }
+        }
+        else if (woodCost > _wood || rockCost > _rock || goldCost > _gold) 
+        {
+            Debug.Log("Недостаточно ресурсов");
+            notEnoughResourcesPanel.SetActive(true);
         }
         Cancel();
     }
